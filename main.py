@@ -32,8 +32,9 @@ print(f"The average of your numbers is {(num1 + num2 + num3)/3:.2f}")
 # One lot is 13,3 grams.
 
 talents = float(input("Enter a mass in the medieval units of talents: "))
-print(f"{talents} talents in kilos is {talents * 3.42:.0f}"
-print(f"{talents} talents in kilos is {(talents * 3.42)/1000:.0f}")
+
+print(f"{talents} talents in kilos is {talents * 3.42:.0f}")
+print(f"{talents} talents in grams is {talents * 3.42 * 1000:.0f}")
 """
 print(f"{random.randint(0, 999):03d}")
 print(str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9)))
