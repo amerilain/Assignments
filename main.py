@@ -1,7 +1,7 @@
 import math
 import random
 """
-# phase 12
+# phase 1
 name = input("What is Your name? ")
 print("hello, " + name + "!")
 
