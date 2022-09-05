@@ -26,8 +26,8 @@ print(f"The average of your numbers is {(num1 + num2 + num3)/3:.2f}")
 
 # part 5
 talents = float(input("Enter talents:\n"))
-pounds = float(input("\nEnter pounds:\n"))
-lots = float(input("\nEnter lots:\n"))
+pounds = float(input("Enter pounds:\n"))
+lots = float(input("Enter lots:\n"))
 
 talent_grams = float(talents * 20 * 32 * 13.3)
 pounds_grams = float(pounds * 32 * 13.3)

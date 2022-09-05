@@ -86,6 +86,34 @@ if access_denied:
 """
 
 # part 6
+# define variables
+inside_circle = 0
+count = 0
+
+# ask user to input number of points
+N = int(input("Enter number of points: "))
+
+# start while loop (True?)
+while count < N:
+    # randomly generate points on y and x axis
+    x = random.uniform(-1, 1)
+    y = random.uniform(-1, 1)
+
+    # if inside increase counts by one
+    if x**2 + y**2 < 1:
+        inside_circle += 1
+        count += 1
+    # else only increase the count
+    else:
+        count += 1
+
+
+# calculate pi
+pi = float(4 * inside_circle / N)
+# print pi
+print(f"pi = {pi: 0.20f}")
+
+
 
 
 
