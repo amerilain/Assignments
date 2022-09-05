@@ -1,5 +1,4 @@
 
-
 # part 1
 sizeOfFish = int(input("How big is your fish?\n"))
 sizeLimit = 42
@@ -41,7 +40,6 @@ if gender == "female":
         print("your hemoglobin is normal.")
     else:
         print("your hemoglobin is high.")
-
 
 
 # part 4

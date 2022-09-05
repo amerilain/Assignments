@@ -1,5 +1,5 @@
 import random
-"""
+
 # part 1
 n = 1
 while n <= 1000:
@@ -19,8 +19,7 @@ while True:
 
 # part 3
 count = 0
-smallest = 214748364
-final = 0
+smallest = 0
 largest = 0
 
 while True:
@@ -29,14 +28,20 @@ while True:
         break
     while num != "":
         num = int(num)
+
         if num > largest:
             largest = num
-            count += 1
+            if count == 0:
+                smallest = num
+                count += 1
+                break
             break
 
-        num = int(num)
-        if num < 2147483647:
+        if num < smallest:
             smallest = num
+            count += 1
+            break
+        else:
             break
 
 print(f"{largest} is the largest number")
@@ -83,7 +88,7 @@ while count < 5:
 # print Access denied
 if access_denied:
     print("access denied")
-"""
+
 
 # part 6
 # define variables
@@ -115,6 +120,6 @@ print(f"pi = {pi: 0.20f}")
 
 
 
-
+"""
 
 
