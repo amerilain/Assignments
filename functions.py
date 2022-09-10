@@ -1,10 +1,6 @@
 import random
 
 # part 1
-# Write a function that returns a random dice roll between 1 and 6. The function should not have
-# any parameters. Write a main program that rolls the dice until the result is 6. The main program
-# should print out the result of each roll.
-
 dice = 0
 
 
@@ -16,3 +12,16 @@ while dice != 6:
     dice = roll_dice()
     print(f"dice number is {dice}")
 
+
+# part 2
+dice = 0
+dice_sides = int(input("enter the number of sides: "))
+
+
+def roll_dice(sides):
+    return random.randint(1, sides)
+
+
+while dice != dice_sides:
+    dice = roll_dice(dice_sides)
+    print(f"dice number is: {dice}")
