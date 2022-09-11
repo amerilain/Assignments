@@ -70,7 +70,6 @@ print(positive_ints(integers))
 
 # part 6
 def pizza_calculator(diameter, euros):
-
     area = math.pi * (diameter/2)**2
     sq_meters = area/100
     return float(euros/sq_meters)
