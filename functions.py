@@ -63,16 +63,19 @@ def make_even(numbers):
     return even_nums
 
 
-integers = [1, 2, 3, 4, 5]
+integers = []
+for i in range(10):
+    integers.append((random.randint(1, 99)))
 print(integers)
 print(make_even(integers))
 
 
 # part 6
 def pizza_calculator(diameter, euros):
-    area = math.pi * (diameter/2)**2
-    sq_meters = area/100
-    return float(euros/sq_meters)
+    #area = math.pi * (diameter/2)**2
+    #sq_meters = area/100
+    #return float(euros/sq_meters)
+    return euros / math.pi * (diameter / 200) ** 2
 
 
 diameter1 = float(input("enter the diameter of the first pizza in cm: "))
