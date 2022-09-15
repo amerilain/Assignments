@@ -2,12 +2,12 @@ import random
 
 # part 1
 dice = int(input("How many dice to roll? "))
-dice_num = 0
 total = 0
 for i in range(0, dice):
     dice_num = random.randint(1, 6)
+    print(str(dice_num), end=" ")
     total = total + dice_num
-print(f"The sum of the dice rolls is {total}.")
+print(f"\nThe sum of the dice rolls is {total}.")
 
 
 # part 2
@@ -22,8 +22,7 @@ while True:
         break
     # convert string to int and store number in list
     else:
-        num = int(num)
-        numbers.append(num)
+        numbers.append(int(num))
 # revers sort numbers
 numbers.sort(reverse=True)
 # print the 5 greatest numbers; looping through list with for loop
@@ -45,7 +44,7 @@ if n > 1:
     # if not divisible by smaller number it must be prime
     else:
         print(f"{n} is a prime number")
-# if n is 1, print "not prime" 
+# if n is 1, print "not prime"
 else:
     print(f"{n} is not a prime number")
 
@@ -55,5 +54,5 @@ cities = []
 for i in range(0, 5):
     city = input("Enter the name of a city: ")
     cities.append(city)
-for i in range(0, len(cities)):
-    print(cities[i])
+for city in cities:
+    print(city)

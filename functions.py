@@ -29,7 +29,7 @@ while dice != dice_sides:
 
 
 # part 3
-gallon_amount = int(input("Enter an amount of gallons to convert to liters (negative value to quit): "))
+gallon_amount = float(input("Enter an amount of gallons to convert to liters (negative value to quit): "))
 
 
 def gallon_to_liter(gallons):
@@ -46,7 +46,7 @@ while gallon_amount > 0:
 def sum_of_integers(numbers):
     i = 0
     for number in numbers:
-        i = i + number
+        i += number
     return i
 
 
@@ -55,7 +55,7 @@ print(sum_of_integers(integers))
 
 
 # part 5
-def positive_ints(numbers):
+def make_even(numbers):
     even_nums = []
     for i in numbers:
         if i % 2 == 0:
@@ -65,7 +65,7 @@ def positive_ints(numbers):
 
 integers = [1, 2, 3, 4, 5]
 print(integers)
-print(positive_ints(integers))
+print(make_even(integers))
 
 
 # part 6
