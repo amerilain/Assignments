@@ -14,5 +14,6 @@ sql = "SELECT name, municipality FROM airport WHERE ident = '"+icao+"'"
 cursor = connection.cursor()
 cursor.execute(sql)
 response = cursor.fetchall()
-
-print(response)
+if cursor.rowcount >0:
+    for row in response:
+        print(f"Airport: {row[0]}\nLocation: {row[1]} ")
