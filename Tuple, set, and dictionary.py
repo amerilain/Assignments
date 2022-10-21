@@ -43,7 +43,7 @@ while True:
             print({airports[code]})
             break
         else:
-            print("no such airport exist")
+            print("no airports to fetch")
 
 
 

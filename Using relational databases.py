@@ -9,7 +9,7 @@ connection = mariadb.connect(
          password='root123',
          autocommit=True
          )
-"""
+
 # part 1
 icao = input("Enter IACO: ")
 sql = "SELECT name, municipality FROM airport WHERE ident = '"+icao+"'"
@@ -24,13 +24,23 @@ if cursor.rowcount >0:
 code = input("Enter country code: ")
 sql = "SELECT airport.name AS 'Airport Name', type AS 'Airport Type' FROM airport, country WHERE " \
       "airport.iso_country=country.iso_country and country.iso_country= '"+code+"' ORDER BY type asc; "
+'''
+SQL = "SELECT airport.iso_country, country.name, airport.type, count(*) FROM airport, country WHERE " \
+      "airport.iso_country = country.iso_country AND airport.iso_country = 'FI' GROUP BY airport.type; "
+'''
+
 cursor = connection.cursor()
 cursor.execute(sql)
 response = cursor.fetchall()
 if cursor.rowcount >0:
     for row in response:
         print(f"{row[0]}, {row[1]}")
-"""
+
+'''
+print(f"{row[1]} has ")
+print(f"{row[3]} {row[2]}")
+'''
+
 # part 3
 iaco1 = input("Enter IACO code of first airport: ")
 iaco2 = input("Enter IACO code of second airport:")
