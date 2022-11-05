@@ -125,3 +125,42 @@ for car in cars:
     table.append([car.registration, car.max_speed, car.current_speed, car.travelled_dist])
 print("")
 print(tabulate(table, headers=['registration', 'max speed', 'current speed', 'travelled distance'], tablefmt='orgtbl'))
+
+
+class Race:
+    def __init__(self, name, distance, car_list):
+        self.name = name
+        self.distance = distance
+        self.car_list = car_list
+
+    def hour_pass(self):
+        for car in self.car_list:
+            car.accelerate(random.randint(-10, 15))
+            car.drive(1)
+
+    def print_status(self):
+        print(self.name + ";")
+        for car in self.car_list:
+            print(f"{car.registration:6s}: {car.current_speed:3d}, {car.travelled_dist} km")
+
+    def race_finished(self):
+        for car in self.car_list:
+            if car.travelled_dist >= self.distance:
+                return True
+        return False
+
+
+cars_list = []
+for i in range(1, 11):
+    new_car = Car(("ABC-" + str(i+1)), random.randint(100, 200))
+    cars_list.append(new_car)
+race = Race("derby", 8000, cars_list)
+n = 0
+while not race.race_finished():
+    race.hour_pass()
+    n += 1
+    if n%10 == 0:
+        print(f"After {n} hours")
+        race.print_status()
+print(f"The final result after {n} hours is: ")
+race.print_status()
