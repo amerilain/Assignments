@@ -90,6 +90,8 @@ class Car:
         self.travelled_dist = travelled_dist
 
     def accelerate(self, speed_change):
+        self.current_speed = min(max(self.current_speed + speed_change, 0), self.max_speed)
+        """
         if self.max_speed >= self.current_speed + speed_change >= 0:
             self.current_speed = self.current_speed + speed_change
         elif self.current_speed + speed_change > self.max_speed:
@@ -97,11 +99,12 @@ class Car:
         elif self.current_speed + speed_change < 0:
             self.current_speed = 0
         return
+        """
 
     def drive(self, hours):
-        self.travelled_dist = self.travelled_dist + (self.current_speed * hours)
+        self.travelled_dist += self.current_speed * hours
 
-
+"""
 max_dist = 0
 cars = []
 for car in range(10):
@@ -123,8 +126,8 @@ while max_dist < 10000:
 table = []
 for car in cars:
     table.append([car.registration, car.max_speed, car.current_speed, car.travelled_dist])
-print("")
-print(tabulate(table, headers=['registration', 'max speed', 'current speed', 'travelled distance'], tablefmt='orgtbl'))
+    print("")
+    print(tabulate(table, headers=['registration', 'max speed', 'current speed', 'travelled distance'], tablefmt='orgtbl'))
 
 
 class Race:
@@ -164,3 +167,7 @@ while not race.race_finished():
         race.print_status()
 print(f"The final result after {n} hours is: ")
 race.print_status()
+
+"""
+
+

@@ -1,14 +1,13 @@
 import requests
 
-'''
 # part 1
 request = "https://api.chucknorris.io/jokes/random"
 response = requests.get(request).json()
 print(response["value"])
-'''
 
+# part 2
 location_name = input("Please enter city name: ")
-request2 = "https://api.openweathermap.org/data/2.5/weather?q=" + location_name + "&appid=" + "My_API_Key" + "&units=metric"
+request2 = "https://api.openweathermap.org/data/2.5/weather?q=" + location_name + "&appid=" + "myKey" + "&units=metric"
 
 try:
     response2 = requests.get(request2)
